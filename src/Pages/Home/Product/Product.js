@@ -1,11 +1,13 @@
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import './Product.css';
 
 const Product = ({product}) => {
     const {image, name, status, rating, genres, id} = product.show;
+    const navigate = useNavigate();
     const handleClick = id =>{
-        // navigate(`/order/${id}`);
+        navigate(`/movies/${id}`);
         console.log(id);
     };
     return (
@@ -34,7 +36,7 @@ const Product = ({product}) => {
                         </p>
                     </div>
                 </div>
-            <button className="btn-products" onClick={()=>handleClick(id)}>Order Now</button>
+            <button className="btn-products" onClick={()=>handleClick(id)}>Details</button>
             </Card.Body>
         </Card>
         </Col>

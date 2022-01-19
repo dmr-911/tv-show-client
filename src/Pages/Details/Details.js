@@ -14,11 +14,11 @@ const Details = () => {
     
     return (
         <Container>
-            <Row xs={1} md={2}>
-            <Col>
+            <Row xs={1} md={2} className="my-5">
+            <Col xs={12} md={4}>
         {
             matchedItem ? 
-            <Card className="p-3 digital-cart">
+            <Card className="p-3 details-cart">
                 <div>
                     <div className="d-flex justify-content-between">
                         <div className="text-white px-2" style={{backgroundColor : '#24409c'}}>
@@ -32,14 +32,15 @@ const Details = () => {
                 <Card.Title>{matchedItem?.show?.name.slice(0,24)}</Card.Title>
                 <hr />
                 <div>
-                        <div className="text-start">
-                            {/* <p><b>Score: {matchedItem?.show?.product.score}</b></p> */}
+                        <div className="">
+                            <p><b>Rating: {matchedItem?.show?.rating.average ? matchedItem?.show?.rating.average : 0} / 10</b></p>
                             <p><small>Status : {matchedItem?.show?.status} </small></p>
                         </div>
-                        <div dangerouslySetInnerHTML={{__html: matchedItem?.show?.summary}} >
-                        </div>
+                        <h6 className="fw-bold">Details</h6>
+                        <span dangerouslySetInnerHTML={{__html: matchedItem?.show?.summary}} >
+                        </span>
                     </div>
-                <button className="btn-products">Details</button>
+                <button className="btn-products">Buy ticket</button>
                 </Card.Body>
             </Card>
             : 
@@ -51,7 +52,7 @@ const Details = () => {
           </div>
         }
         </Col>
-        <Col><img className="img-fluid" src={movie} alt="" /></Col>
+        <Col xs={12} md={8}><img className="img-fluid" src={movie} alt="" /></Col>
             </Row>
         </Container>
     );

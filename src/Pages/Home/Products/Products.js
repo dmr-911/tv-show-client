@@ -13,10 +13,10 @@ const Products = () => {
 
     return (
         <Container>
-             <Row xs={1} md={4} className="g-4">
+             <Row xs={1} md={4} className="g-4 my-5">
                {
                   products?.length ? products.map(product => <Product
-                   key={product.key}
+                   key={product.show.id}
                    product={product}
                    ></Product>)
                    :

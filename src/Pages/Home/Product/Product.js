@@ -13,7 +13,7 @@ const Product = ({product}) => {
         <Card className="p-3 digital-cart">
             <div>
                 <div className="d-flex justify-content-between">
-                    <div className="bg-danger text-white px-2">
+                    <div className="text-white px-2" style={{backgroundColor : '#24409c'}}>
                         <span>{genres[0]}</span>
                     </div>
                     <span className="far fa-heart favorite"></span>
@@ -22,19 +22,18 @@ const Product = ({product}) => {
             <Card.Img variant="top" src={image.original} height="140" />
             <Card.Body>
             <Card.Title>{name.slice(0,24)}</Card.Title>
+            <hr />
             <div>
-                <div className="d-flex justify-content-between">
                     <div className="text-start">
-                        <p><small>Score: ${product.score}</small></p>
+                        <p><b>Score: {product.score}</b></p>
                         <p><small>Status : {status} </small></p>
                     </div>
                     <div>
                         <p>
-                            Rating : {rating.average}
+                            <b>Rating : {rating.average ? rating.average : 0} / 10</b>   
                         </p>
                     </div>
                 </div>
-            </div>
             <button className="btn-products" onClick={()=>handleClick(id)}>Order Now</button>
             </Card.Body>
         </Card>

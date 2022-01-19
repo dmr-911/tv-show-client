@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import './Details.css';
-import movie from '../../images/movie.jpg';
+import movie from '../../images/movie.png';
 
 const Details = () => {
     const {id} = useParams();

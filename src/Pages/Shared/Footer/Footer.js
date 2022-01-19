@@ -16,7 +16,7 @@ const Footer = () => {
     return (
       <>
         <Container fluid className="footer-text text-white py-5 footer">
-          <Row xs={1} md={3}>
+          <Row xs={1}>
             <Col>
               <div className="d-flex align-items-center justify-content-center mb-3">
                 <div
@@ -27,7 +27,7 @@ const Footer = () => {
                   }}
                   className="me-4"
                 ></div>
-                <b>About Tvmaze</b>
+                <b className="fs-5">About Tvmaze</b>
               </div>
               <p className="">
                 Step up with <b>tvmaze.com</b>. Your step one step can make us bigger and movie show's in your reach now. 
@@ -47,9 +47,6 @@ const Footer = () => {
                 <b>CONTACT INFORMATION</b>
               </div>
               <p>
-                Stay up to date with current movies and dramas. Check the latest updates here.
-              </p>
-              <p>
                 <span>{phone}</span>
                 <span> +880 1313124926</span>
               </p>
@@ -61,24 +58,6 @@ const Footer = () => {
                 <span>{location} </span>
                 <span> Dhaka, Bangladesh</span>
               </p>
-              <div className="divider bg-info rounded my-3 mx-auto"></div>
-            </Col>
-            <Col>
-              <div className="d-flex align-items-center justify-content-center mb-4">
-                <div
-                  style={{
-                    backgroundColor: "tomato",
-                    width: "4px",
-                    height: "20px",
-                  }}
-                  className="me-4"
-                ></div>
-                <b>RECENT POSTS</b>
-              </div>
-              <p className="mb-3">
-                Life is a beautiful journey not a destination. Let's make that more easier and happier.
-              </p>
-              <p className="mb-3">Take only memories, leave only footprints</p>
               <div className="divider bg-info rounded my-3 mx-auto"></div>
             </Col>
           </Row>

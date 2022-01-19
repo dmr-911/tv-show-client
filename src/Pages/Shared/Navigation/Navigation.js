@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import './Navigation.css';
 import logo from '../../../images/nav/logo.png';
 
@@ -7,7 +8,7 @@ const Navigation = () => {
     return (
         <Navbar className="navigation-bg" variant="dark" expand="lg">
         <Container fluid>
-            <Navbar.Brand href="#">
+            <Navbar.Brand as={Link} to="home">
                 {/* <img src={logo} alt="" /> */}
                 <img
         src={logo}

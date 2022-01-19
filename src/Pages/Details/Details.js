@@ -37,7 +37,7 @@ const Details = () => {
                             <p><small>Status : {matchedItem?.show?.status} </small></p>
                         </div>
                         <h6 className="fw-bold">Details</h6>
-                        <span dangerouslySetInnerHTML={{__html: matchedItem?.show?.summary}} >
+                        <span dangerouslySetInnerHTML={{__html: matchedItem?.show?.summary.slice(0,300)}} >
                         </span>
                     </div>
                 <button className="btn-products">Buy ticket</button>

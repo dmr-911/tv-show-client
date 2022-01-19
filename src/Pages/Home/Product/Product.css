@@ -1,0 +1,35 @@
+.digital-cart{
+    transition: all .2s ease-out;
+    box-shadow: 0 3px 20px 0px rgb(0 0 0 / 12%);
+    border-radius: 1.5rem !important;
+}
+.digital-cart:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 1rem 3rem rgba(31,45,61,.125)!important;
+}
+.btn-products{
+    /* background: rgb(34, 62, 94); */
+    background: #ed1c24;
+    font-family: Roboto;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 200px;
+    color: white;
+    border-color: #ed1c24;
+    padding: 8px 25px;
+    border-radius: 30px;
+    transition: all .3s ease-in;
+}
+.btn-products:hover{
+/* background-color: slateblue; */
+    border-color: red;
+    background-color: transparent;
+    color: #ed1c24;
+    border-radius: 30px;
+}
+.favorite{
+    cursor: pointer;
+}
+.icon-color{
+    color: orange;
+}

@@ -1,4 +1,5 @@
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Products from './Pages/Home/Products/Products';
 
 function App() {

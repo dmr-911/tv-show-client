@@ -5,6 +5,7 @@ import Home from './Pages/Home/Home/Home';
 import NotFound from './Pages/NotFound/NotFound';
 import Details from './Pages/Details/Details';
 import AuthProvider from './context/AuthProvider';
+import Footer from './Pages/Shared/Footer/Footer';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="movies/:id" element={<Details></Details>}></Route>
           <Route path="*" element={<NotFound></NotFound>}></Route>
         </Routes>
+        <Footer></Footer>
       </Router>
       </AuthProvider>
     </div>

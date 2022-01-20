@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, Col, Container, Row, Spinner } from 'react-bootstrap';
+import { Button, Card, Col, Container, Form, Row, Spinner } from 'react-bootstrap';
 import './BuyTicket.css';
 import movie from '../../images/aside.jpg';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -40,20 +40,78 @@ const BuyTicket = () => {
             <Card className="p-3 details-cart">
             <form onSubmit={handlePurchase}>
                 <label htmlFor="productName"><b>Show name</b></label><br />
-                <input defaultValue={matchedItem?.show.name} name="productName" type="text" className="purchase-input" onBlur={handleOnBlur} placeholder="Product Name" required/><br />
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Control
+                    name="productName"
+                    className="green-form-email green-form-control" 
+                    type="text" 
+                    placeholder="Product Name" 
+                    onBlur={handleOnBlur}
+                    />
+                </Form.Group>
                 <label htmlFor="genre"><b>Genre</b></label><br />
-                <input defaultValue={matchedItem?.show.genres[0]} name="genre" type="text" className="purchase-input" onBlur={handleOnBlur} placeholder="Product Name" required/><br />
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Control
+                    name="genre"
+                    className="green-form-email green-form-control" 
+                    type="text" 
+                    placeholder="Genre" 
+                    onBlur={handleOnBlur}
+                    />
+                </Form.Group>
                 <label htmlFor="name"><b>Name</b></label><br />
-                <input name="name" type="text" className="purchase-input" onBlur={handleOnBlur} placeholder="Name" required/><br />
-                <label htmlFor="productName"><b>Email</b></label><br />
-                <input name="email" type="email" className="purchase-input" onBlur={handleOnBlur} placeholder="email" required/><br />
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Control
+                    name="name"
+                    className="green-form-email green-form-control" 
+                    type="text" 
+                    placeholder="Enter your name" 
+                    onBlur={handleOnBlur}
+                    />
+                </Form.Group>
+                <label htmlFor="email"><b>Email</b></label><br />
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Control
+                    name="email"
+                    className="green-form-email green-form-control" 
+                    type="email" 
+                    placeholder="Enter email" 
+                    onBlur={handleOnBlur}
+                    />
+                </Form.Group>
                 <label htmlFor="phone"><b>Phone</b></label><br />
-                <input name="phone" type="number" className="purchase-input" onBlur={handleOnBlur} placeholder="Phone" required/><br />
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Control
+                    name="phone"
+                    className="green-form-email green-form-control" 
+                    type="number" 
+                    placeholder="Enter phone number" 
+                    onBlur={handleOnBlur}
+                    />
+                </Form.Group>
                 <label htmlFor="city"><b>City</b></label><br />
-                <input name="city" type="text" className="purchase-input" onBlur={handleOnBlur} placeholder="City" required/><br />
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Control
+                    name="city"
+                    className="green-form-email green-form-control" 
+                    type="text" 
+                    placeholder="Enter city" 
+                    onBlur={handleOnBlur}
+                    />
+                </Form.Group>
                 <label htmlFor="country"><b>Country</b></label><br />
-                <input name="country" type="text" className="purchase-input" onBlur={handleOnBlur} placeholder="Country" required/><br />
-                <input type="submit" value="Purchase" className="purchase-input btn-danger" required/>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Control
+                    name="country"
+                    className="green-form-email green-form-control" 
+                    type="text" 
+                    placeholder="Enter country" 
+                    onBlur={handleOnBlur}
+                    />
+                </Form.Group>
+                <Button className="purchase-btn" variant="primary" type="submit">
+                    Purchase
+                </Button>
             </form>
           </Card>
             : 

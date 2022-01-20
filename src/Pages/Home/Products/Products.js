@@ -13,7 +13,9 @@ const Products = () => {
 
     return (
         <Container>
-             <Row xs={1} md={3} lg={4} className="g-4 my-5">
+            <h2 className="fw-bold mt-4">Tv <span className="text-danger">Shows</span></h2>
+            <div class="divider mb-4 mx-auto"></div>
+             <Row xs={1} md={3} lg={4} className="g-4 mb-5">
                {
                   products?.length ? products.map(product => <Product
                    key={product.show.id}

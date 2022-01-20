@@ -42,6 +42,7 @@ const BuyTicket = () => {
                 <label htmlFor="productName"><b>Show name</b></label><br />
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Control
+                    defaultValue={matchedItem?.show?.name}
                     name="productName"
                     className="green-form-email green-form-control" 
                     type="text" 
@@ -52,6 +53,7 @@ const BuyTicket = () => {
                 <label htmlFor="genre"><b>Genre</b></label><br />
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Control
+                    defaultValue={matchedItem?.show?.genres[0]}
                     name="genre"
                     className="green-form-email green-form-control" 
                     type="text" 

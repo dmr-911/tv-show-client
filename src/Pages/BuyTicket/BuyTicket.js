@@ -4,6 +4,7 @@ import './BuyTicket.css';
 import movie from '../../images/aside.jpg';
 import { useParams } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
+import { addToDb } from '../../utilities/storage';
 
 const BuyTicket = () => {
     const {id} = useParams();
@@ -23,6 +24,7 @@ const BuyTicket = () => {
 
     const handlePurchase = e =>{
         e.preventDefault();
+        addToDb(details.name, id, details.email, details.country);
         console.log(details);
     };
     return (

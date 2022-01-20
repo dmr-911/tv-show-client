@@ -40,7 +40,7 @@ const BuyTicket = () => {
             <Card className="p-3 details-cart">
             <div className="divider bg-info rounded mb-3 mx-auto"></div>
             <form onSubmit={handlePurchase}>
-                <label htmlFor="productName"><b>Item name</b></label><br />
+                <label htmlFor="productName"><b>Show name</b></label><br />
                 <input defaultValue={matchedItem?.show.name} name="productName" type="text" className="purchase-input" onBlur={handleOnBlur} placeholder="Product Name" required/><br />
                 <label htmlFor="genre"><b>Genre</b></label><br />
                 <input defaultValue={matchedItem?.show.genres[0]} name="genre" type="text" className="purchase-input" onBlur={handleOnBlur} placeholder="Product Name" required/><br />

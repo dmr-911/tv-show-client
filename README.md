@@ -1,6 +1,6 @@
 # A React.js App
 
-[TvMaze.com](https://github.com/facebook/create-react-app).
+[TvMaze.com](https://tvmaze-a3c88.web.app/)
 
 - React router v6
 - user information saved to session storage

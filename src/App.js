@@ -9,6 +9,7 @@ import Footer from './Pages/Shared/Footer/Footer';
 import Navigation from './Pages/Shared/Navigation/Navigation';
 import BuyTicket from './Pages/BuyTicket/BuyTicket';
 import Orders from './Pages/Orders/Orders';
+import About from './Pages/About/About';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="movies/:id" element={<Details></Details>}></Route>
           <Route path="buyTicket/:id" element={<BuyTicket></BuyTicket>}></Route>
           <Route path="orders" element={<Orders></Orders>}></Route>
+          <Route path="about" element={<About></About>}></Route>
           <Route path="*" element={<NotFound></NotFound>}></Route>
         </Routes>
         <Footer></Footer>

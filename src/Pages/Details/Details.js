@@ -1,20 +1,24 @@
 import React from 'react';
 import { Container, Row, Col, Card, Spinner } from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import './Details.css';
-import movie from '../../images/movie.png';
+import movie from '../../images/aside.jpg';
 import useAuth from '../../hooks/useAuth';
 
 const Details = () => {
     const {id} = useParams();
     const {products} = useAuth();
+    const navigate = useNavigate();
     const matchedItem = products.find(product => parseInt(product.show.id) === parseInt(id));
-    console.log(matchedItem);
+
+    const handleBuyTicket = () =>{
+        navigate(`/buyTicket/${id}`);
+    };
 
     
     return (
         <Container>
-            <Row xs={1} md={2} className="my-5">
+            <Row xs={1} md={2} className="my-5 g-4">
             <Col xs={12} md={4}>
         {
             matchedItem ? 
@@ -37,10 +41,10 @@ const Details = () => {
                             <p><small>Status : {matchedItem?.show?.status} </small></p>
                         </div>
                         <h6 className="fw-bold">Details</h6>
-                        <span dangerouslySetInnerHTML={{__html: matchedItem?.show?.summary.slice(0,300)}} >
+                        <span dangerouslySetInnerHTML={{__html: matchedItem?.show?.summary}} >
                         </span>
                     </div>
-                <button className="btn-products">Buy ticket</button>
+                <button className="btn-products" onClick={handleBuyTicket}>Buy ticket</button>
                 </Card.Body>
             </Card>
             : 

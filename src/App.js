@@ -7,6 +7,7 @@ import Details from './Pages/Details/Details';
 import AuthProvider from './context/AuthProvider';
 import Footer from './Pages/Shared/Footer/Footer';
 import Navigation from './Pages/Shared/Navigation/Navigation';
+import BuyTicket from './Pages/BuyTicket/BuyTicket';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<Home></Home>}></Route>
           <Route path="home" element={<Home></Home>}></Route>
           <Route path="movies/:id" element={<Details></Details>}></Route>
+          <Route path="buyTicket/:id" element={<BuyTicket></BuyTicket>}></Route>
           <Route path="*" element={<NotFound></NotFound>}></Route>
         </Routes>
         <Footer></Footer>

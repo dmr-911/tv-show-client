@@ -1,10 +1,12 @@
 import React from 'react';
+import { Container } from 'react-bootstrap';
+import nf from '../../images/nf.jpg';
 
 const NotFound = () => {
     return (
-        <div>
-            <h3>404 Not Found</h3>
-        </div>
+        <Container>
+            <img src={nf} className="img-fluid" alt="page not found" />
+        </Container>
     );
 };
 

@@ -13,7 +13,7 @@ const Products = () => {
 
     return (
         <Container>
-             <Row xs={1} md={4} className="g-4 my-5">
+             <Row xs={1} md={3} lg={4} className="g-4 my-5">
                {
                   products?.length ? products.map(product => <Product
                    key={product.show.id}

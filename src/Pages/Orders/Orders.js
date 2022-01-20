@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table } from 'react-bootstrap';
+import { Container, Table } from 'react-bootstrap';
 import './Orders.css';
 
 const Orders = () => {
@@ -7,6 +7,9 @@ const Orders = () => {
     const items = JSON.parse(users);
     console.log(items);
     return (
+        <Container>
+        <h2 className="fw-bold mt-4">Orders <span className="text-danger">details</span></h2>
+        <div class="divider mb-4 mx-auto"></div>
         <Table striped bordered hover size="sm" responsive>
         <thead>
             <tr>
@@ -26,7 +29,7 @@ const Orders = () => {
                     </tr>)
             }
         </tbody>
-        </Table>
+        </Table></Container>
     );
 };
 

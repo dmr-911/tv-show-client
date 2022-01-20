@@ -17,7 +17,9 @@ const Details = () => {
     
     return (
         <Container>
-            <Row xs={1} md={2} className="my-5 g-4">
+            <h2 className="fw-bold mt-4">Item <span className="text-danger">details</span></h2>
+            <div class="divider mb-4 mx-auto"></div>
+            <Row xs={1} md={2} className="mb-5 g-4">
             <Col xs={12} md={4}>
         {
             matchedItem ? 

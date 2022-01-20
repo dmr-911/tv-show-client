@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import { Card, Col, Container, Row, Spinner } from 'react-bootstrap';
 import './BuyTicket.css';
 import movie from '../../images/aside.jpg';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import { addToDb } from '../../utilities/storage';
 
 const BuyTicket = () => {
     const {id} = useParams();
     const {products} = useAuth();
+    const navigate = useNavigate();
     const matchedItem = products.find(product => parseInt(product.show.id) === parseInt(id));
     const [details, setDetails] = useState({
         productName : matchedItem?.show.name,
@@ -24,7 +25,8 @@ const BuyTicket = () => {
 
     const handlePurchase = e =>{
         e.preventDefault();
-        addToDb(id, details.name, details.email, details.country);
+        addToDb(id, details.name, details.email, details.country, details.productName);
+        navigate('/orders')
     };
     return (
         <Container>

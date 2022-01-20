@@ -26,7 +26,7 @@ const Navigation = () => {
                 navbarScroll
             >
                 <Nav.Link as={Link} to="home"><b>Home</b></Nav.Link>
-                <Nav.Link as={Link} to="dashboard"><b>Dashboard</b></Nav.Link>
+                <Nav.Link as={Link} to="orders"><b>Orders</b></Nav.Link>
             </Nav>
             </Navbar.Collapse>
         </Container>

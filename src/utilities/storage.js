@@ -1,14 +1,15 @@
 // use local storage as your db for now
-const addToDb = (id, name, email, country) =>{
+const addToDb = (id, name, email, country, productName) =>{
     const exists = getDb();
     let cart = [];
     let user = {
         name : name,
+        id : id,
         email : email,
-        country : country
+        country : country,
+        productName : productName
     };
     if(!exists){
-        user[id] = 1;
         cart.push(user);
     }
     else{

@@ -24,8 +24,7 @@ const BuyTicket = () => {
 
     const handlePurchase = e =>{
         e.preventDefault();
-        addToDb(details.name, id, details.email, details.country);
-        console.log(details);
+        addToDb(id, details.name, details.email, details.country);
     };
     return (
         <Container>

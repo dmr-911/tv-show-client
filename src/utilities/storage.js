@@ -1,53 +1,36 @@
 // use local storage as your db for now
-const addToDb = (name, id, email, country) => {
+const addToDb = (id, name, email, country) =>{
     const exists = getDb();
-    let tv_cart = {
+    let cart = [];
+    let user = {
         name : name,
-        id : id, 
         email : email,
         country : country
     };
-    if (!exists) {
-      tv_cart[id] = 1;
+    if(!exists){
+        user[id] = 1;
+        cart.push(user);
     }
-    else {
-      tv_cart = JSON.parse(exists);
-      if (tv_cart[id]) {
-        const newCount = tv_cart[id] + 1;
-        tv_cart[id] = newCount;
-      }
-      else {
-        tv_cart[id] = 1;
-      }
+    else{
+        cart = JSON.parse(exists);
+        cart.push(user);
+        }
+        updateDb(cart);
     }
-    updateDb(tv_cart);
+
+const getDb = () => sessionStorage.getItem('orders');
+const updateDb = cart => {
+    sessionStorage.setItem('orders', JSON.stringify(cart));
   }
   
-  const getDb = () => localStorage.getItem('tv_cart');
-  
-  const updateDb = cart => {
-    localStorage.setItem('tv_cart', JSON.stringify(cart));
-  }
-  
-  const removeFromDb = id => {
+const getStoredCart = () =>{
     const exists = getDb();
-    if (!exists) {
-  
-    }
-    else {
-      const tv_cart = JSON.parse(exists);
-      delete tv_cart[id];
-      updateDb(tv_cart);
-    }
+    return exists ? JSON.parse(exists) : []
+};
+
+
+const clearTheCart = () => {
+    localStorage.removeItem('orders');
   }
-  
-  const getStoredCart = () => {
-    const exists = getDb();
-    return exists ? JSON.parse(exists) : {};
-  }
-  
-  const clearTheCart = () => {
-    localStorage.removeItem('tv_cart');
-  }
-  
-  export { addToDb, removeFromDb, clearTheCart, getStoredCart }
+
+export {addToDb}

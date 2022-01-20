@@ -10,7 +10,6 @@ const Details = () => {
     const {products} = useAuth();
     const navigate = useNavigate();
     const matchedItem = products.find(product => parseInt(product.show.id) === parseInt(id));
-
     const handleBuyTicket = () =>{
         navigate(`/buyTicket/${id}`);
     };

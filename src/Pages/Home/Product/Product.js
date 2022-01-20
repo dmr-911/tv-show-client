@@ -8,7 +8,6 @@ const Product = ({product}) => {
     const navigate = useNavigate();
     const handleClick = id =>{
         navigate(`/movies/${id}`);
-        console.log(id);
     };
     return (
         <Col>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, Col, Container, Row, Spinner } from 'react-bootstrap';
 import './BuyTicket.css';
 import movie from '../../images/aside.jpg';
@@ -9,14 +9,22 @@ const BuyTicket = () => {
     const {id} = useParams();
     const {products} = useAuth();
     const matchedItem = products.find(product => parseInt(product.show.id) === parseInt(id));
+    const [details, setDetails] = useState({
+        productName : matchedItem?.show.name,
+        genre : matchedItem?.show.genres[0]
+    });
     const handleOnBlur = e =>{
-
+        const field = e.target.name;
+        const value = e.target.value;
+        const newDetails = {...details};
+        newDetails[field] = value;
+        setDetails(newDetails);
     };
 
     const handlePurchase = e =>{
-
+        e.preventDefault();
+        console.log(details);
     };
-
     return (
         <Container>
             <h2 className="fw-bold my-4">Buyer <span className="text-danger">information</span></h2>
@@ -28,8 +36,10 @@ const BuyTicket = () => {
             <Card className="p-3 details-cart">
             <div className="divider bg-info rounded mb-3 mx-auto"></div>
             <form onSubmit={handlePurchase}>
-                <label htmlFor="productName"><b>Product name</b></label><br />
-                <input defaultValue={matchedItem.show.name} name="productName" type="text" className="purchase-input" onBlur={handleOnBlur} placeholder="Product Name" required disabled/><br />
+                <label htmlFor="productName"><b>Item name</b></label><br />
+                <input defaultValue={matchedItem?.show.name} name="productName" type="text" className="purchase-input" onBlur={handleOnBlur} placeholder="Product Name" required/><br />
+                <label htmlFor="genre"><b>Genre</b></label><br />
+                <input defaultValue={matchedItem?.show.genres[0]} name="genre" type="text" className="purchase-input" onBlur={handleOnBlur} placeholder="Product Name" required/><br />
                 <label htmlFor="name"><b>Name</b></label><br />
                 <input name="name" type="text" className="purchase-input" onBlur={handleOnBlur} placeholder="Name" required/><br />
                 <label htmlFor="productName"><b>Email</b></label><br />

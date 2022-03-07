@@ -5,8 +5,11 @@ import movie from '../../images/aside.jpg';
 import { useNavigate, useParams } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import { addToDb } from '../../utilities/storage';
+import { add_to_cart } from '../../redux/actions/cartAction';
+import { useDispatch } from 'react-redux';
 
 const BuyTicket = () => {
+    const dispatch = useDispatch();
     const {id} = useParams();
     const {products} = useAuth();
     const navigate = useNavigate();
@@ -25,9 +28,11 @@ const BuyTicket = () => {
 
     const handlePurchase = e =>{
         e.preventDefault();
+        dispatch(add_to_cart(details))
         addToDb(id, details.name, details.email, details.country, details.productName);
         navigate('/orders')
     };
+    console.log(details);
     return (
         <Container>
             <h2 className="fw-bold mt-4">Buyer <span className="text-danger">information</span></h2>
